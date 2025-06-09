@@ -1,0 +1,63 @@
+# Spotify A/B Test Results: Mood vs Genre Playlists
+
+Date: 06/09/2025
+Author: Yagna Sree Bhavani Pendala
+
+Objective:
+To determine whether mood-based playlists lead to significantly higher engagement than genre-based playlists using Spotify data.
+
+---
+
+Dataset Summary:
+- Mood Playlists: 1373
+- Genre Playlists: 1290
+- Total Tracks Analyzed: 138,474
+- Final Playlists after Cleaning: 2,321
+- Engagement Metric: Average Track Popularity per Playlist
+- Additional Metrics: Track Count, Avg Duration
+
+---
+
+Track Count Stats:
+- Mood: Mean = 61.53, Std = 29.83
+- Genre: Mean = 57.73, Std = 30.03
+
+Outlier Detection:
+- Mood Outliers: 10
+- Genre Outliers: 2
+
+---
+
+Statistical Test Results:
+
+1. Independent T-Test (Before Removing Outliers)
+   - t-statistic: 10.351
+   - p-value: 0.0000
+   - Result: Statistically significant difference in means
+
+2. Bootstrap Confidence Interval (Before Removing Outliers)
+   - 95% CI for mean diff: [5.295, 7.781]
+
+3. Bootstrap Confidence Interval (After Removing Outliers)
+   - 95% CI for mean diff: [5.561, 7.994]
+
+---
+
+Interpretation:
+- Mood playlists showed significantly higher average popularity scores than genre playlists.
+- The effect is robust across both classical t-tests and non-parametric bootstrapping.
+- Outliers were inspected and removed; conclusions remained consistent.
+- No evident bias in playlist size distribution or track count per group.
+
+---
+
+Conclusion:
+✅ Mood-based playlists perform better than genre-based playlists in terms of user engagement (popularity score).
+
+---
+
+Tools Used:
+- Python (Pandas, Numpy, Seaborn, Matplotlib, Scipy)
+- Spotify API
+- A/B Testing, Bootstrap Sampling
+
